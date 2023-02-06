@@ -1,0 +1,14 @@
+django
+db-sqlite3
+pillow
+django-ckeditor
+bcrypt
+django[argon2]
+djangorestframework
+beautifulsoup4
+pdfkit
+pandas
+matplotlib
+seaborn
+reportlab
+feedparser
