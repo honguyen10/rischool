@@ -35,3 +35,31 @@ class Teacher(models.Model):
         subjects = ", ".join(subject.name for subject in self.subject_ids.all())
         display = self.name + ' - ' + subjects
         return display
+
+class Level(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Course(models.Model):
+    name = models.CharField(max_length=200)
+    subject_id = models.ForeignKey(Subject, on_delete=models.PROTECT)
+    level_id = models.ForeignKey(Level, on_delete=models.PROTECT)
+    duration = models.CharField(max_length=100)
+    max_unit_load = models.IntegerField()
+    min_unit_load = models.IntegerField()
+
+    def __str__(self):
+        return self.name
+
+class Class(models.Model):
+    name = models.CharField(max_length=200)
+    course_id = models.ForeignKey(Course, on_delete=models.PROTECT)
+    teacher_id = models.ForeignKey(Teacher, on_delete=models.PROTECT)
+    schedule = models.CharField(max_length=100)
+    start_date = models.DateField()
+    end_date = models.DateField()
+
+    def __str__(self):
+        return self.name
