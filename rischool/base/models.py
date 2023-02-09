@@ -18,6 +18,7 @@ class Student(models.Model):
 class Subject(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField(blank=True)
+    image = models.ImageField(upload_to='base/images', blank=True)
 
     def __str__(self):
         return self.name
@@ -30,6 +31,7 @@ class Teacher(models.Model):
         ('female', 'Female')
     ])
     subject_ids = models.ManyToManyField(Subject)
+    image = models.ImageField(upload_to='base/images', blank=True)
 
     def __str__(self):
         subjects = ", ".join(subject.name for subject in self.subject_ids.all())
@@ -49,6 +51,7 @@ class Course(models.Model):
     duration = models.CharField(max_length=100)
     max_unit_load = models.IntegerField()
     min_unit_load = models.IntegerField()
+    image = models.ImageField(upload_to='base/images', blank=True)
 
     def __str__(self):
         return self.name
