@@ -50,11 +50,11 @@
 			<nav class="main_nav_container">
 				<div class="main_nav">
 					<ul class="main_nav_list">
-						<li class="main_nav_item"><a href="index.html">home</a></li>
-						<li class="main_nav_item"><a href="#">about us</a></li>
-						<li class="main_nav_item"><a href="courses.html">courses</a></li>
-						<li class="main_nav_item"><a href="news.html">news</a></li>
-						<li class="main_nav_item"><a href="#">contact</a></li>
+						<li class="main_nav_item"><a href="{% url 'base:index.html' %}">home</a></li>
+						<li class="main_nav_item"><a href="{% url 'base:about.html' %}">about us</a></li>
+						<li class="main_nav_item"><a href="{% url 'base:courses.html' %}">courses</a></li>
+						<li class="main_nav_item"><a href="{% url 'base:news.html' %}">news</a></li>
+						<li class="main_nav_item"><a href="{% url 'base:contact.html' %}">contact</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -86,7 +86,6 @@
 					<li class="menu_item menu_mm"><a href="index.html">Home</a></li>
 					<li class="menu_item menu_mm"><a href="#">About us</a></li>
 					<li class="menu_item menu_mm"><a href="courses.html">Courses</a></li>
-					<li class="menu_item menu_mm"><a href="elements.html">Elements</a></li>
 					<li class="menu_item menu_mm"><a href="news.html">News</a></li>
 					<li class="menu_item menu_mm"><a href="#">Contact</a></li>
 				</ul>
